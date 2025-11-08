@@ -5,25 +5,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
         
-        String answer;
         Stack<Character> stack = new Stack<>();
         for (char c: str.toCharArray()) {
             if (c == '(') {
                 stack.push(c);
             } else {
                 if (stack.isEmpty()) {
-                    answer = "No";
-                    break;
+                    System.out.print("No");
+                    return;
                 }
                 stack.pop();
             }
         }
         if (stack.isEmpty()) {
-            answer = "Yes";
+            System.out.print("Yes");
         } else {
-            answer = "No";
+            System.out.print("No");
         }
-
-        System.out.print(answer);
     }
 }
