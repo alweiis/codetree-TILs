@@ -9,11 +9,9 @@ public class Main {
             arr[i] = sc.nextInt();
         }
         
-        for (int i = 1; i <= n; i++) {
-            if (i % 2 == 1) {
-                Arrays.sort(arr, 0, i - 1);
-                System.out.print(arr[i / 2] + " ");
-            }
+        for (int i = 1; i <= n; i += 2) {
+            Arrays.sort(arr, 0, i);
+            System.out.print(arr[i / 2] + " ");
         }
     }
 }
