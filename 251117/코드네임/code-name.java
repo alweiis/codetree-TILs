@@ -19,7 +19,7 @@ public class Main {
             }
         }
 
-        System.out.print(users[minIdx].score + " " + users[minIdx].score);
+        System.out.print(users[minIdx].codeName + " " + users[minIdx].score);
     }
 }
 
