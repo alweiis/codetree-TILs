@@ -2,21 +2,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        User[] users = new User[5];
-        char name = ' ';
-        int lowest = 100;
 
-        for (int i = 0; i < 5; i++) {
+        int n = 5;
+        User[] users = new User[n];
+
+        for (int i = 0; i < n; i++) {
             char codeName = sc.next().charAt(0);
             int score = sc.nextInt();
             users[i] = new User(codeName, score);
-            if (score < lowest) {
-                name = codeName;
-                lowest = score;
+        }
+
+        int minIdx = 0;
+        for (int i = 1; i < n; i++) {
+            if (users[minIdx].score > users[i].score) {
+                minIdx = i;
             }
         }
 
-        System.out.print(name + " " + lowest);
+        System.out.print(users[minIdx].score + " " + users[minIdx].score);
     }
 }
 
