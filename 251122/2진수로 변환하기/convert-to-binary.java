@@ -11,6 +11,9 @@ public class Main {
             sb.append(n % 2);
             n /= 2;
         }
+        if (sb.length() == 0) {
+            sb.append(0);
+        }
         sb.reverse();
         System.out.print(sb.toString());
     }
