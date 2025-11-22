@@ -27,7 +27,7 @@ public class Main {
         int totalDays = d;
 
         for (int i = 1; i < m; i++) {
-            totalDays += arr[i];
+            totalDays += dayOfMonth[i];
         }
         return totalDays;
     }
