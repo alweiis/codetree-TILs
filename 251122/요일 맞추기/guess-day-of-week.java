@@ -9,7 +9,7 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
         
-        int diff = getDays(m2, d2) - getDays(m1, d1)
+        int diff = getDays(m2, d2) - getDays(m1, d1);
         
         String answer = "";
         String[] dayOfWeek = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
@@ -29,6 +29,6 @@ public class Main {
         for (int i = 1; i < m; i++) {
             totalDays += arr[i];
         }
-        return totalDays
+        return totalDays;
     }
 }
