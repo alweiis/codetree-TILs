@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -8,13 +9,10 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
         
-        int[] dayOfMonth = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        String[] dayOfWeek = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
-
-        int day1 = getDays(dayOfMonth, m1, d1); 
-        int day2 = getDays(dayOfMonth, m2, d2);
-        int diff = day2 - day1;
+        int diff = getDays(m2, d2) - getDays(m1, d1)
+        
         String answer = "";
+        String[] dayOfWeek = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
 
         if (diff >= 0) {
             answer = dayOfWeek[diff % 7];
@@ -24,12 +22,13 @@ public class Main {
         System.out.print(answer);
     }
 
-    private static int getDays(int[] arr, int m, int d) {
-        int day = d;
+    private static int getDays(int m, int d) {
+        int[] dayOfMonth = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int totalDays = d;
 
         for (int i = 1; i < m; i++) {
-            day += arr[i];
+            totalDays += arr[i];
         }
-        return day;
+        return totalDays
     }
 }
