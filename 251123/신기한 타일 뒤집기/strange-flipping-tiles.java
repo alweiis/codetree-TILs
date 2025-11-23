@@ -3,24 +3,30 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] arr = new int[100000 + 1];
+        int[] arr = new int[200000 + 1];
         
         int curr = 0;
-        int offset = 100;
+        int offset = 100000;
         for (int i = 0; i < n; i++) {
             int x = sc.nextInt();
             char d = sc.next().charAt(0);
 
             if (d == 'R') {
-                for (int j = curr + offset; j < curr + offset + x; j++) {
-                    arr[j] = 1;
+                int start = curr;
+                int end = curr + (x - 1);
+
+                for (int j = start; j <= end; j++) {
+                    arr[j + offset] = 1;    // 검은색
                 }
-                curr += x;
+                curr = end; // 마지막으로 뒤집은 위치
             } else {
-                for (int j = curr + offset - x; j < curr + offset; j++) {
-                    arr[j] = -1;
+                int start = curr - (x - 1);
+                int end = curr;
+
+                for (int j = start; j <= end; j++) {
+                    arr[j + offset] = -1;   // 흰색
                 }
-                curr -= x;
+                curr = start; // 마지막으로 뒤집은 위치
             }
         }
 
