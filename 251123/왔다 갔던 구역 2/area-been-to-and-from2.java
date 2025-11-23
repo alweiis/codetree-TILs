@@ -18,7 +18,7 @@ public class Main {
                 }
                 curr += x;
             } else {
-                for (int j = curr + offset; j > curr + offset - x; j--) {
+                for (int j = curr + offset - x; j < curr + offset; j++) {
                     array[j]++;
                 }
                 curr -= x;
